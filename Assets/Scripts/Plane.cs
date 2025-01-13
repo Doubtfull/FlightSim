@@ -16,6 +16,9 @@ public class Plane : MonoBehaviour {
     [SerializeField]
     float gLimitPitch;
 
+    [SerializeField]
+    GameObject newPlaneModel;
+
     [Header("Lift")]
     [SerializeField]
     float liftPower;
@@ -246,6 +249,7 @@ public class Plane : MonoBehaviour {
         cannonFiring = false;
 
         damageEffect.GetComponent<ParticleSystem>().Pause();
+        newPlaneModel.SetActive(false);
         deathEffect.SetActive(true);
     }
 
