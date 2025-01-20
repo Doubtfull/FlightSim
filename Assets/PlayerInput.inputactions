@@ -377,7 +377,7 @@
                 {
                     "name": "",
                     "id": "9f0a780e-ba4d-4467-a1fe-9234a00c0440",
-                    "path": "<Keyboard>/h",
+                    "path": "<Keyboard>/pageUp",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -421,7 +421,7 @@
                 {
                     "name": "",
                     "id": "bcc680ba-46db-4e39-931a-f7af3b54fc9d",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

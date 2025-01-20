@@ -17,6 +17,11 @@ public class Plane : MonoBehaviour {
     float gLimitPitch;
 
     [SerializeField]
+    AudioSource plane;
+    [SerializeField]
+    AudioSource crash;
+
+    [SerializeField]
     GameObject newPlaneModel;
 
     [Header("Lift")]
@@ -251,6 +256,8 @@ public class Plane : MonoBehaviour {
         damageEffect.GetComponent<ParticleSystem>().Pause();
         newPlaneModel.SetActive(false);
         deathEffect.SetActive(true);
+        crash.Play();
+        plane.Pause();
     }
 
     void UpdateThrottle(float dt) {
