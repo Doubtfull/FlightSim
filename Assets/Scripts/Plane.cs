@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Plane : MonoBehaviour {
     [SerializeField]
@@ -118,6 +119,8 @@ public class Plane : MonoBehaviour {
     Transform cannonSpawnPoint;
     [SerializeField]
     GameObject bulletPrefab;
+
+    public float timer = 0;
 
     new PlaneAnimation animation;
 
@@ -258,6 +261,7 @@ public class Plane : MonoBehaviour {
         deathEffect.SetActive(true);
         crash.Play();
         plane.Pause();
+        
     }
 
     void UpdateThrottle(float dt) {
@@ -572,6 +576,14 @@ public class Plane : MonoBehaviour {
 
         //update weapon state
         UpdateWeapons(dt);
+        if (health == 0)
+        {
+            timer += Time.deltaTime;
+        }
+        if (timer >= 3)
+        {
+            SceneManager.LoadScene("Replay");
+        }
     }
 
     void OnCollisionEnter(Collision collision) {

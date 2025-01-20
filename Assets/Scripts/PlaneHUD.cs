@@ -30,6 +30,13 @@ public class PlaneHUD : MonoBehaviour {
     Text gforceIndicator;
     [SerializeField]
     Text altitude;
+
+    [SerializeField]
+    Text TAltitude;
+
+    [SerializeField]
+    Text TSpeed;
+
     [SerializeField]
     Bar healthBar;
     [SerializeField]
@@ -344,6 +351,22 @@ public class PlaneHUD : MonoBehaviour {
             UpdateAOA();
             UpdateGForce();
             lastUpdateTime = Time.time;
+            if (altitude.color == lockColor)
+            {
+                TAltitude.color = lockColor;
+            } else
+            {
+                TAltitude.color = normalColor;
+            }
+
+            if (airspeed.color == lockColor)
+            {
+                TSpeed.color = lockColor;
+            }
+            else
+            {
+                TSpeed.color = normalColor;
+            }
         }
     }
 }
